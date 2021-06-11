@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AESport">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.main.MainActivity"
             android:theme="@style/SplashTheme"
             android:windowSoftInputMode="adjustPan">
             <intent-filter>
