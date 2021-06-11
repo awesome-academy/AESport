@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -12,7 +13,217 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@android:color/white"
         tools:context=".ui.home.HomeFragment">
+
+        <View
+            android:id="@+id/viewToolbar"
+            android:layout_width="0dp"
+            android:layout_height="?actionBarSize"
+            android:background="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textTitle"
+            style="@style/TextTitleToolbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textSize="@dimen/sp_30"
+            app:layout_constraintBottom_toBottomOf="@+id/viewToolbar"
+            app:layout_constraintEnd_toEndOf="@+id/viewToolbar"
+            app:layout_constraintStart_toStartOf="@+id/viewToolbar"
+            app:layout_constraintTop_toTopOf="@+id/viewToolbar" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/buttonSetting"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:background="?android:selectableItemBackground"
+            android:backgroundTint="@android:color/transparent"
+            android:contentDescription="@null"
+            app:layout_constraintBottom_toBottomOf="@+id/viewToolbar"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@+id/viewToolbar"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.065"
+            app:srcCompat="@drawable/ic_setting" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewToolbar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideTop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.075" />
+
+                <View
+                    android:id="@+id/viewDivide"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_2"
+                    android:background="@color/color_gray_chateau"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/guideTop" />
+
+                <View
+                    android:id="@+id/viewWelcome"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/bg_view_welcom"
+                    app:layout_constraintBottom_toBottomOf="@+id/viewDivide"
+                    app:layout_constraintDimensionRatio="1:0.3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/viewDivide"
+                    app:layout_constraintWidth_percent="0.85" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageRonaldo"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginEnd="@dimen/dp_6"
+                    app:layout_constraintBottom_toBottomOf="@+id/viewWelcome"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintEnd_toEndOf="@+id/viewWelcome"
+                    app:layout_constraintWidth_percent="0.32"
+                    app:srcCompat="@drawable/ic_ronaldo" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textWelcome"
+                    style="@style/TextTitleToolbar"
+                    android:layout_marginStart="@dimen/dp_8"
+                    android:layout_marginBottom="@dimen/dp_8"
+                    android:text="@string/text_welcome"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintBottom_toTopOf="@+id/viewDivide"
+                    app:layout_constraintStart_toStartOf="@+id/viewWelcome" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextViewRegular"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="@dimen/dp_8"
+                    android:layout_marginTop="@dimen/dp_4"
+                    android:text="@string/text_recommend"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/sp_12"
+                    app:layout_constraintBottom_toBottomOf="@+id/viewWelcome"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                    app:layout_constraintStart_toStartOf="@+id/viewWelcome"
+                    app:layout_constraintTop_toBottomOf="@+id/textWelcome" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.67" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideStart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="@dimen/dp_20" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideEnd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="@dimen/dp_20" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textSport"
+                    style="@style/TextViewBold"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:text="@string/title_sports"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintStart_toStartOf="@+id/guideStart"
+                    app:layout_constraintTop_toBottomOf="@+id/viewWelcome" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerSports"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_20"
+                    android:layout_marginVertical="@dimen/dp_20"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:layout_constraintEnd_toStartOf="@+id/guideEnd"
+                    app:layout_constraintStart_toStartOf="@+id/guideStart"
+                    app:layout_constraintTop_toBottomOf="@+id/textSport"
+                    app:spanCount="4"
+                    tools:listitem="@layout/item_sport" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textLeagues"
+                    style="@style/TextViewBold"
+                    android:layout_width="0dp"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:text="@string/title_leagues"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintEnd_toStartOf="@+id/spinnerCountries"
+                    app:layout_constraintStart_toStartOf="@+id/guideStart"
+                    app:layout_constraintTop_toBottomOf="@+id/recyclerSports" />
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/spinnerCountries"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_view_welcom"
+                    android:dropDownWidth="@dimen/dp_200"
+                    android:spinnerMode="dropdown"
+                    app:layout_constraintBottom_toTopOf="@+id/recyclerLeagues"
+                    app:layout_constraintEnd_toStartOf="@+id/guideEnd"
+                    app:layout_constraintTop_toBottomOf="@+id/recyclerSports" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerLeagues"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/dp_20"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:layout_constraintEnd_toStartOf="@+id/guideEnd"
+                    app:layout_constraintStart_toStartOf="@+id/guideStart"
+                    app:layout_constraintTop_toBottomOf="@+id/textLeagues"
+                    app:spanCount="3"
+                    tools:listitem="@layout/item_league"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/processLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/SpinKitView.Large.Wave"
+            app:SpinKit_Color="@color/color_cornflower_blue"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
