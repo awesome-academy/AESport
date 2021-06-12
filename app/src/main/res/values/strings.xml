@@ -5,4 +5,11 @@
     <string name="title_home">Home</string>
     <string name="title_favorite">Favorite</string>
     <string name="title_search">Search</string>
+    <string name="title_sports">Sports</string>
+    <string name="title_leagues">Leagues</string>
+    <string name="title_countries">Countries</string>
+
+    <!--text-->
+    <string name="text_welcome">Welcome to AESport Application</string>
+    <string name="text_recommend">The place that provides you with all about the world of sports.</string>
 </resources>

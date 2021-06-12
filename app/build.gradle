@@ -89,4 +89,7 @@ dependencies {
     //coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
+
+    //loading
+    implementation 'com.github.ybq:Android-SpinKit:1.4.0'
 }
