@@ -12,4 +12,7 @@
     <!--text-->
     <string name="text_welcome">Welcome to AESport Application</string>
     <string name="text_recommend">The place that provides you with all about the world of sports.</string>
+
+    <!--message-->
+    <string name="msg_exception_base">Binding is only valid between onCreateView and onDestroyView</string>
 </resources>

@@ -13,7 +13,7 @@ import kotlinx.parcelize.Parcelize
 data class Leagues(
     @SerializedName("idLeague")
     @PrimaryKey(autoGenerate = true)
-    val id: Int,
+    val id: Long,
     @SerializedName("strSport")
     @ColumnInfo(name = "strSport")
     val strSport: String,
