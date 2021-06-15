@@ -3,6 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="league"
+            type="com.suntraining.aesport.data.model.Leagues" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,11 +28,12 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/imageSport"
+                android:id="@+id/imageLeague"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:contentDescription="@null"
                 android:scaleType="fitCenter"
+                app:imageUrl="@{league.strBadge}"
                 tools:src="@tools:sample/avatars" />
 
         </com.google.android.material.card.MaterialCardView>
@@ -33,10 +41,11 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/textLeagues"
             style="@style/TextViewRegular"
-            android:layout_marginVertical="@dimen/dp_6"
-            android:textSize="@dimen/sp_12"
             android:layout_width="0dp"
+            android:layout_marginVertical="@dimen/dp_6"
             android:layout_marginEnd="@dimen/dp_4"
+            android:text="@{league.strLeague}"
+            android:textSize="@dimen/sp_12"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/imageCheckComplete"
             app:layout_constraintStart_toStartOf="parent"
@@ -47,6 +56,7 @@
             android:id="@+id/imageCheckComplete"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            app:imageLocal="@{league.strComplete}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="parent"
