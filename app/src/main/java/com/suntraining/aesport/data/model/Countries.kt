@@ -8,8 +8,10 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class Countries(
     @SerializedName("name_en")
-    val name: String
+    val name: String,
 ) : Parcelable {
+
+    override fun toString() = name
 
     companion object {
         val diffUtil = object : DiffUtil.ItemCallback<Countries>() {

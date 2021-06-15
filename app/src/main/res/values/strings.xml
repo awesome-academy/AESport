@@ -15,4 +15,6 @@
 
     <!--message-->
     <string name="msg_exception_base">Binding is only valid between onCreateView and onDestroyView</string>
+    <string name="value_yes">yes</string>
+    <string name="values_no">no</string>
 </resources>

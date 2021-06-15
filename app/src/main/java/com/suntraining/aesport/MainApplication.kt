@@ -2,7 +2,6 @@ package com.suntraining.aesport
 
 import android.app.Application
 import com.suntraining.aesport.di.*
-import com.suntraining.aesport.di.networkModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -15,6 +14,7 @@ class MainApplication : Application() {
                 listOf(
                     dbLocalModule,
                     repositoryModule,
+                    apiModule,
                     networkModule,
                     viewModelModule
                 )
