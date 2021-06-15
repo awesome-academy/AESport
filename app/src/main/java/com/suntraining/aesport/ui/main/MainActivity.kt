@@ -15,7 +15,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             supportFragmentManager.findFragmentById(R.id.fragmentNavHost) as NavHostFragment
         val navController = navHostFragment.navController
         viewBinding.bottomNavigationView.apply {
-            selectedItemId = R.id.navigation_home
+            selectedItemId = R.id.homeFragment
             setupWithNavController(navController)
         }
     }

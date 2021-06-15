@@ -14,6 +14,9 @@ data class Leagues(
     @SerializedName("idLeague")
     @PrimaryKey(autoGenerate = true)
     val id: Long,
+    @SerializedName("strLeague")
+    @ColumnInfo(name = "strLeague")
+    val strLeague: String,
     @SerializedName("strSport")
     @ColumnInfo(name = "strSport")
     val strSport: String,
