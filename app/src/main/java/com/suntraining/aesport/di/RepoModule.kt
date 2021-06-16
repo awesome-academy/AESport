@@ -30,5 +30,5 @@ val repositoryModule = module {
     single<CountryDataSource> { CountryRemoteDataSource(get()) }
     single<CountryRepository> { CountryRepositoryImpl(get()) }
     single<LeagueDataSource.Remote> { LeagueRemoteDataSource(get()) }
-    single<LeagueRepository> { LeagueRepositoryImpl(get()) }
+    single<LeagueRepository> { LeagueRepositoryImpl(get(), get()) }
 }
