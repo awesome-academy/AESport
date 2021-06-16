@@ -2,6 +2,7 @@ package com.suntraining.aesport.ui.home
 
 import android.view.View
 import android.widget.AdapterView
+import androidx.navigation.fragment.findNavController
 import com.suntraining.aesport.R
 import com.suntraining.aesport.base.BaseFragment
 import com.suntraining.aesport.data.model.Countries
@@ -57,5 +58,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
     }
 
     private fun clickItemLeague(leagues: Leagues) {
+        val action = HomeFragmentDirections.actionHomeFragmentToDetailLeagueFragment(leagues)
+        findNavController().navigate(action)
     }
 }

@@ -7,5 +7,19 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.suntraining.aesport.ui.home.HomeFragment"
-        android:label="HomeFragment" />
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_detailLeagueFragment"
+            app:destination="@id/detailLeagueFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailLeagueFragment"
+        android:name="com.suntraining.aesport.ui.detailleague.DetailLeagueFragment"
+        android:label="DetailLeagueFragment">
+        <argument
+            android:name="league"
+            app:argType="com.suntraining.aesport.data.model.Leagues"/>
+    </fragment>
 </navigation>
