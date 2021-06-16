@@ -9,22 +9,26 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import com.suntraining.aesport.R
 import com.suntraining.aesport.utils.showToast
 
 abstract class BaseFragment<VB : ViewDataBinding, VM : BaseViewModel> : Fragment() {
 
+    private var _viewBinding: VB? = null
+    protected val viewBinding: VB
+        get() = _viewBinding
+            ?: throw IllegalStateException(resources.getString(R.string.msg_exception_base))
     @get:LayoutRes
     protected abstract val layoutResource: Int
     protected abstract val viewModel: VM
-    protected var dataBinding: VB? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? = DataBindingUtil
         .inflate<VB>(inflater, layoutResource, container, false)
-        .apply { dataBinding = this }
+        .apply { _viewBinding = this }
         .root
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -60,6 +64,6 @@ abstract class BaseFragment<VB : ViewDataBinding, VM : BaseViewModel> : Fragment
 
     override fun onDestroy() {
         super.onDestroy()
-        dataBinding = null
+        _viewBinding = null
     }
 }

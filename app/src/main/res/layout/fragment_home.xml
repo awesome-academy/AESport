@@ -6,7 +6,7 @@
     <data>
 
         <variable
-            name="viewModel"
+            name="homeVM"
             type="com.suntraining.aesport.ui.home.HomeViewModel" />
     </data>
 
@@ -72,7 +72,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    app:layout_constraintGuide_percent="0.075" />
+                    app:layout_constraintGuide_begin="@dimen/dp_100" />
 
                 <View
                     android:id="@+id/viewDivide"
@@ -165,9 +165,9 @@
                     android:id="@+id/recyclerSports"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="@dimen/dp_20"
                     android:layout_marginVertical="@dimen/dp_20"
                     android:orientation="vertical"
+                    app:data="@{homeVM.sports}"
                     app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                     app:layout_constraintEnd_toStartOf="@+id/guideEnd"
                     app:layout_constraintStart_toStartOf="@+id/guideStart"
@@ -191,8 +191,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_view_welcom"
-                    android:dropDownWidth="@dimen/dp_200"
+                    android:entries="@{homeVM.countries}"
                     android:spinnerMode="dropdown"
+                    style="@android:style/Widget.Spinner"
                     app:layout_constraintBottom_toTopOf="@+id/recyclerLeagues"
                     app:layout_constraintEnd_toStartOf="@+id/guideEnd"
                     app:layout_constraintTop_toBottomOf="@+id/recyclerSports" />
@@ -203,12 +204,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="@dimen/dp_20"
                     android:orientation="vertical"
+                    app:data="@{homeVM.leagueByCountry}"
                     app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                     app:layout_constraintEnd_toStartOf="@+id/guideEnd"
                     app:layout_constraintStart_toStartOf="@+id/guideStart"
                     app:layout_constraintTop_toBottomOf="@+id/textLeagues"
                     app:spanCount="3"
-                    tools:listitem="@layout/item_league"/>
+                    tools:listitem="@layout/item_league" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -216,14 +218,15 @@
 
         <com.github.ybq.android.spinkit.SpinKitView
             android:id="@+id/processLoading"
+            style="@style/SpinKitView.Large.Wave"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            style="@style/SpinKitView.Large.Wave"
             app:SpinKit_Color="@color/color_cornflower_blue"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:visibility="@{homeVM.isLoading()}" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
