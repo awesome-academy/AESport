@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        tools:context=".ui.detailleague.DetailLeagueFragment">
+
+        <View
+            android:id="@+id/viewToolbar"
+            android:layout_width="0dp"
+            android:layout_height="?actionBarSize"
+            android:background="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/buttonBack"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/dp_6"
+            android:background="?android:selectableItemBackground"
+            android:contentDescription="@null"
+            app:layout_constraintBottom_toBottomOf="@+id/viewToolbar"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="@+id/viewToolbar"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.07"
+            app:srcCompat="@drawable/ic_arrow_back" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textTitle"
+            style="@style/TextTitleToolbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_10"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/app_name"
+            android:textSize="@dimen/sp_24"
+            app:layout_constraintBottom_toBottomOf="@+id/viewToolbar"
+            app:layout_constraintEnd_toStartOf="@+id/buttonFavorite"
+            app:layout_constraintStart_toEndOf="@+id/buttonBack"
+            app:layout_constraintTop_toTopOf="@+id/viewToolbar" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/buttonFavorite"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:background="?android:selectableItemBackground"
+            android:contentDescription="@null"
+            app:layout_constraintBottom_toBottomOf="@+id/viewToolbar"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@+id/viewToolbar"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.07"
+            app:srcCompat="@drawable/ic_unfavorite" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewToolbar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="@dimen/dp_20">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageLeague"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:scaleType="fitXY"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintStart_toStartOf="@+id/guideStart"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="0.3"
+                    tools:src="@tools:sample/avatars" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideStart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="@dimen/dp_10" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideEnd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="@dimen/dp_10" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideTop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="0dp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.35" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/titleEstablished"
+                    style="@style/TextViewBold"
+                    android:text="@string/text_established"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintStart_toStartOf="@+id/guideline5"
+                    app:layout_constraintTop_toTopOf="@+id/guideTop" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/titleSeason"
+                    style="@style/TextViewBold"
+                    android:text="@string/text_current_season"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintStart_toStartOf="@+id/guideline5"
+                    app:layout_constraintTop_toBottomOf="@id/titleEstablished" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/titleSport"
+                    style="@style/TextViewBold"
+                    android:text="@string/text_sport"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintStart_toStartOf="@+id/guideline5"
+                    app:layout_constraintTop_toBottomOf="@id/titleSeason" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/titleLocation"
+                    style="@style/TextViewBold"
+                    android:text="@string/text_location"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintStart_toStartOf="@+id/guideline5"
+                    app:layout_constraintTop_toBottomOf="@id/titleSport" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/titleGender"
+                    style="@style/TextViewBold"
+                    android:layout_marginBottom="@dimen/dp_6"
+                    android:text="@string/text_gender"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintStart_toStartOf="@+id/guideline5"
+                    app:layout_constraintTop_toBottomOf="@id/titleLocation" />
+
+                <View
+                    android:id="@+id/viewInfor"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="@dimen/dp_14"
+                    app:layout_constraintBottom_toBottomOf="@+id/titleGender"
+                    app:layout_constraintEnd_toStartOf="@+id/guideEnd"
+                    app:layout_constraintStart_toEndOf="@+id/titleSeason"
+                    app:layout_constraintTop_toTopOf="@+id/guideTop" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textEstablished"
+                    style="@style/TextViewRegular"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintStart_toStartOf="@+id/viewInfor"
+                    app:layout_constraintTop_toTopOf="@+id/viewInfor"
+                    tools:text="@tools:sample/last_names" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textSeason"
+                    style="@style/TextViewRegular"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintStart_toStartOf="@+id/viewInfor"
+                    app:layout_constraintTop_toBottomOf="@+id/textEstablished"
+                    tools:text="@tools:sample/last_names" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textSport"
+                    style="@style/TextViewRegular"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintStart_toStartOf="@+id/viewInfor"
+                    app:layout_constraintTop_toBottomOf="@+id/textSeason"
+                    tools:text="@tools:sample/last_names" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textLocation"
+                    style="@style/TextViewRegular"
+                    android:layout_width="0dp"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/viewInfor"
+                    app:layout_constraintTop_toBottomOf="@+id/textSport"
+                    tools:text="@tools:sample/full_names" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textGender"
+                    style="@style/TextViewRegular"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintStart_toStartOf="@+id/viewInfor"
+                    app:layout_constraintTop_toBottomOf="@+id/textLocation"
+                    tools:text="@tools:sample/last_names" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageInternet"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/dp_6"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintEnd_toStartOf="@+id/imageFacebook"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@+id/guideline5"
+                    app:layout_constraintTop_toBottomOf="@+id/titleGender"
+                    app:layout_constraintWidth_percent="0.08"
+                    app:srcCompat="@drawable/ic_internet_explorer" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageFacebook"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/dp_6"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintEnd_toStartOf="@+id/imageYoutube"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/imageInternet"
+                    app:layout_constraintTop_toBottomOf="@+id/titleGender"
+                    app:layout_constraintWidth_percent="0.08"
+                    app:srcCompat="@drawable/ic_facebook" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageYoutube"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/dp_6"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintEnd_toStartOf="@+id/imageTwitter"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/imageFacebook"
+                    app:layout_constraintTop_toBottomOf="@+id/titleGender"
+                    app:layout_constraintWidth_percent="0.08"
+                    app:srcCompat="@drawable/ic_youtube" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageTwitter"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/dp_6"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideEnd"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/imageYoutube"
+                    app:layout_constraintTop_toBottomOf="@+id/titleGender"
+                    app:layout_constraintWidth_percent="0.08"
+                    app:srcCompat="@drawable/ic_twitter" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/titleDescription"
+                    style="@style/TextViewBold"
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:text="@string/text_descriptions"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintStart_toStartOf="@+id/guideStart"
+                    app:layout_constraintTop_toBottomOf="@+id/imageInternet" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textDescription"
+                    style="@style/TextViewRegular"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:textSize="@dimen/sp_12"
+                    app:layout_constraintStart_toStartOf="@+id/guideStart"
+                    app:layout_constraintTop_toBottomOf="@+id/titleDescription"
+                    tools:text="@tools:sample/cities" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/titleTeams"
+                    style="@style/TextViewBold"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:text="@string/text_teams"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintStart_toStartOf="@+id/guideStart"
+                    app:layout_constraintTop_toBottomOf="@+id/textDescription" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerTeams"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:layout_constraintEnd_toStartOf="@+id/guideEnd"
+                    app:layout_constraintStart_toStartOf="@+id/guideStart"
+                    app:layout_constraintTop_toBottomOf="@+id/titleTeams"
+                    app:spanCount="3"
+                    tools:listitem="@layout/item_team" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/titleEvents"
+                    style="@style/TextViewBold"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:text="@string/text_events"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintStart_toStartOf="@+id/guideStart"
+                    app:layout_constraintTop_toBottomOf="@+id/recyclerTeams" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerEvents"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:layout_constraintEnd_toStartOf="@+id/guideEnd"
+                    app:layout_constraintStart_toStartOf="@+id/guideStart"
+                    app:layout_constraintTop_toBottomOf="@+id/titleEvents"
+                    app:spanCount="2"
+                    tools:listitem="@layout/item_event" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/titleTrophy"
+                    style="@style/TextViewBold"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:text="@string/text_trophy"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintStart_toStartOf="@+id/guideStart"
+                    app:layout_constraintTop_toBottomOf="@+id/recyclerEvents" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageTrophy"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:scaleType="fitXY"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintStart_toStartOf="@+id/guideStart"
+                    app:layout_constraintTop_toBottomOf="@+id/titleTrophy"
+                    app:layout_constraintWidth_percent="0.25"
+                    tools:src="@tools:sample/avatars" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageBannerLeague"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:layout_marginBottom="@dimen/dp_6"
+                    android:scaleType="fitXY"
+                    app:layout_constraintDimensionRatio="10:1.8"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideEnd"
+                    app:layout_constraintStart_toStartOf="@+id/guideStart"
+                    app:layout_constraintTop_toBottomOf="@+id/imageTrophy"
+                    tools:src="@tools:sample/avatars" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/processLoading"
+            style="@style/SpinKitView.Large.Wave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:SpinKit_Color="@color/color_cornflower_blue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

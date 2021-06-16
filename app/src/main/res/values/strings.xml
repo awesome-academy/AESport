@@ -12,6 +12,15 @@
     <!--text-->
     <string name="text_welcome">Welcome to AESport Application</string>
     <string name="text_recommend">The place that provides you with all about the world of sports.</string>
+    <string name="text_established">Established</string>
+    <string name="text_sport">Sport</string>
+    <string name="text_current_season">Current season</string>
+    <string name="text_location">Location</string>
+    <string name="text_gender">Gender</string>
+    <string name="text_descriptions">Descriptions</string>
+    <string name="text_teams">Teams</string>
+    <string name="text_events">Last Events</string>
+    <string name="text_trophy">Trophy Icon</string>
 
     <!--message-->
     <string name="msg_exception_base">Binding is only valid between onCreateView and onDestroyView</string>
