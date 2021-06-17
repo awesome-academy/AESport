@@ -1,8 +1,6 @@
 package com.suntraining.aesport.data.source.remote.utils
 
-import com.suntraining.aesport.data.model.CountriesResponse
-import com.suntraining.aesport.data.model.LeaguesResponse
-import com.suntraining.aesport.data.model.SportResponse
+import com.suntraining.aesport.data.model.*
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -35,4 +33,30 @@ interface ApiService {
     suspend fun getLeaguesByCountry(
         @Query(APIConfig.PARAM_COUNTRY) country : String
     ): LeaguesResponse
+
+    /**
+     * League Details by Id: <a href="https://www.thesportsdb.com/api/v1/json/1/lookupleague.php?id=4346">https://www.thesportsdb.com/api/v1/json/1/lookupleague.php?id=4346</a>
+     */
+    @GET(APIConfig.BASE_DETAIL_LEAGUE)
+    suspend fun getDetailLeague(
+        @Query(APIConfig.PARAM_ID) idLeague: String,
+    ): DetailLeagueResponse
+
+    /**
+     * List All teams details in a league by Id:
+     * <a href="https://www.thesportsdb.com/api/v1/json/1/lookup_all_teams.php?id=4328">https://www.thesportsdb.com/api/v1/json/1/lookup_all_teams.php?id=4328</a>
+     */
+    @GET(APIConfig.BASE_TEAMS)
+    suspend fun getTeamsInLeague(
+        @Query(APIConfig.PARAM_ID) idLeague: String,
+    ): TeamResponse
+
+    /**
+     * Last 15 Events by League Id:
+     * <a href="https://www.thesportsdb.com/api/v1/json/1/eventspastleague.php?id=4328">https://www.thesportsdb.com/api/v1/json/1/eventspastleague.php?id=4328</a>
+     */
+    @GET(APIConfig.BASE_EVENTS)
+    suspend fun getEventsInLeague(
+        @Query(APIConfig.PARAM_ID) idLeague: String,
+    ): EventResponse
 }

@@ -13,6 +13,8 @@ import com.suntraining.aesport.data.source.local.AppDatabase.Companion.EXPORT_SC
 )
 abstract class AppDatabase : RoomDatabase() {
 
+    abstract fun leagueDao(): LeagueDAO
+
     companion object {
         const val DATABASE_NAME = "AESport"
         const val DATABASE_VERSION = 1

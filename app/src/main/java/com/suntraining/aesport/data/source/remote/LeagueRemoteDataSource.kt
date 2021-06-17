@@ -8,4 +8,10 @@ class LeagueRemoteDataSource(
 ) : LeagueDataSource.Remote {
     override suspend fun getLeaguesByCountry(country: String) =
         apiService.getLeaguesByCountry(country)
+
+    override suspend fun getDetailLeague(idLeague: String) =
+        apiService.getDetailLeague(idLeague)
+
+    override suspend fun getEventsByLeague(idLeague: String) =
+        apiService.getEventsInLeague(idLeague)
 }
