@@ -166,13 +166,13 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="@dimen/dp_20"
-                    android:orientation="vertical"
+                    android:orientation="horizontal"
                     app:data="@{homeVM.sports}"
                     app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                     app:layout_constraintEnd_toStartOf="@+id/guideEnd"
                     app:layout_constraintStart_toStartOf="@+id/guideStart"
                     app:layout_constraintTop_toBottomOf="@+id/textSport"
-                    app:spanCount="4"
+                    app:spanCount="2"
                     tools:listitem="@layout/item_sport" />
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -209,7 +209,7 @@
                     app:layout_constraintEnd_toStartOf="@+id/guideEnd"
                     app:layout_constraintStart_toStartOf="@+id/guideStart"
                     app:layout_constraintTop_toBottomOf="@+id/textLeagues"
-                    app:spanCount="3"
+                    app:spanCount="2"
                     tools:listitem="@layout/item_league" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
