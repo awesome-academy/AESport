@@ -21,6 +21,9 @@
     <string name="text_teams">Teams</string>
     <string name="text_events">Last Events</string>
     <string name="text_trophy">Trophy Icon</string>
+    <string name="text_nickname">Nicknames</string>
+    <string name="text_stadium">Stadium/Home</string>
+    <string name="text_jersey">Jersey or Equipment Clearart</string>
 
     <!--message-->
     <string name="msg_exception_base">Binding is only valid between onCreateView and onDestroyView</string>
