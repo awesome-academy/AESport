@@ -3,6 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="league"
+            type="com.suntraining.aesport.data.model.Leagues" />
+    </data>
+
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -24,6 +31,7 @@
                 android:layout_height="0dp"
                 android:layout_marginStart="@dimen/dp_6"
                 android:layout_marginEnd="@dimen/dp_10"
+                app:imageUrl="@{league.strBadge}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintStart_toStartOf="parent"
@@ -35,6 +43,7 @@
                 android:id="@+id/textLeague"
                 style="@style/TextViewBold"
                 android:layout_marginStart="@dimen/dp_14"
+                android:text="@{league.strLeague}"
                 android:textSize="@dimen/sp_14"
                 app:layout_constraintStart_toEndOf="@+id/imageLeague"
                 app:layout_constraintTop_toTopOf="parent"
@@ -54,6 +63,7 @@
                 style="@style/TextViewRegular"
                 android:layout_width="0dp"
                 android:gravity="center|start"
+                android:text="@{league.strCountry}"
                 android:textSize="@dimen/sp_12"
                 app:layout_constraintBottom_toTopOf="@+id/textDescription"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -69,6 +79,7 @@
                 android:layout_marginStart="@dimen/dp_14"
                 android:ellipsize="end"
                 android:maxLines="2"
+                android:text="@{league.strDescriptionEN}"
                 android:textSize="@dimen/sp_12"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

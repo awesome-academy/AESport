@@ -20,6 +20,9 @@ data class Leagues(
     @SerializedName("strSport")
     @ColumnInfo(name = "strSport")
     val strSport: String,
+    @SerializedName("strDescriptionEN")
+    @ColumnInfo(name = "strDescriptionEN")
+    val strDescriptionEN : String,
     @SerializedName("strCountry")
     @ColumnInfo(name = "strCountry")
     val strCountry: String,
