@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="event"
             type="com.suntraining.aesport.data.model.Event" />
@@ -42,8 +41,8 @@
             style="@style/TextViewRegular"
             android:layout_width="0dp"
             android:layout_marginVertical="@dimen/dp_6"
-            android:text="@{event.strEvent}"
             android:textSize="@dimen/sp_12"
+            android:text="@{event.strEvent}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cardViewImage"
@@ -66,8 +65,8 @@
             android:layout_width="0dp"
             android:layout_marginStart="@dimen/dp_6"
             android:layout_marginVertical="@dimen/dp_6"
-            android:text="@{event.dateEvent}"
             android:textSize="@dimen/sp_12"
+            android:text="@{event.dateEvent}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageCalendar"

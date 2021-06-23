@@ -45,5 +45,8 @@ class DetailLeagueFragment : BaseFragment<FragmentDetailLeagueBinding, DetailLea
     }
 
     private fun clickItemTeam(team: Team) {
+        val action =
+            DetailLeagueFragmentDirections.actionDetailLeagueFragmentToDetailTeamFragment(team)
+        findNavController().navigate(action)
     }
 }
