@@ -39,4 +39,8 @@
             android:name="team"
             app:argType="com.suntraining.aesport.data.model.Team" />
     </fragment>
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.suntraining.aesport.ui.favoriteleague.FavoriteLeagueFragment"
+        android:label="FavoriteLeagueFragment" />
 </navigation>
