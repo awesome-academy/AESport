@@ -23,7 +23,7 @@ interface ApiService {
      */
     @GET(APIConfig.BASE_LEAGUES)
     suspend fun getLeaguesBySport(
-        @Query(APIConfig.PARAM_SPORT) sport : String
+        @Query(APIConfig.PARAM_SPORT) sport: String,
     ): LeaguesResponse
 
     /**
@@ -31,7 +31,7 @@ interface ApiService {
      */
     @GET(APIConfig.BASE_LEAGUES)
     suspend fun getLeaguesByCountry(
-        @Query(APIConfig.PARAM_COUNTRY) country : String
+        @Query(APIConfig.PARAM_COUNTRY) country: String,
     ): LeaguesResponse
 
     /**
@@ -59,4 +59,22 @@ interface ApiService {
     suspend fun getEventsInLeague(
         @Query(APIConfig.PARAM_ID) idLeague: String,
     ): EventResponse
+
+    /**
+     * Team Details by Id
+     * <a href="https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=133604">https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=133604</a>
+     */
+    @GET(APIConfig.BASE_DETAIL_TEAM)
+    suspend fun getDetailTeam(
+        @Query(APIConfig.PARAM_ID) idTeam: String,
+    ): TeamResponse
+
+    /**
+     * Last 5 Events by Team Id
+     * <a href="https://www.thesportsdb.com/api/v1/json/1/eventslast.php?id=133602">https://www.thesportsdb.com/api/v1/json/1/eventslast.php?id=133602</a>
+     */
+    @GET(APIConfig.BASE_EVENTS_TEAM)
+    suspend fun getEventsByTeam(
+        @Query(APIConfig.PARAM_ID) idTeam: String,
+    ): EventsTeamResponse
 }

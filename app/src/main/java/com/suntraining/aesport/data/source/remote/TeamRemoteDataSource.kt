@@ -8,4 +8,10 @@ class TeamRemoteDataSource(
 ) : TeamDataSource {
     override suspend fun getTeamsByLeague(idLeague: String) =
         apiService.getTeamsInLeague(idLeague)
+
+    override suspend fun getDetailTeam(idTeam: String) =
+        apiService.getDetailTeam(idTeam)
+
+    override suspend fun getEventsByTeam(idTeam: String) =
+        apiService.getEventsByTeam(idTeam)
 }

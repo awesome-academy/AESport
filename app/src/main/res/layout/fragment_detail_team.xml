@@ -3,6 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="detailTeamVM"
+            type="com.suntraining.aesport.ui.detailteam.DetailTeamViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -38,6 +45,7 @@
             android:layout_marginStart="@dimen/dp_10"
             android:ellipsize="end"
             android:maxLines="1"
+            android:text="@{detailTeamVM.detailTeam.get(0).strTeam}"
             android:textSize="@dimen/sp_24"
             app:layout_constraintBottom_toBottomOf="@+id/viewToolbar"
             app:layout_constraintEnd_toEndOf="parent"
@@ -52,8 +60,10 @@
             android:fillViewport="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/viewToolbar">
+            app:layout_constraintTop_toBottomOf="@+id/viewToolbar"
+            app:layout_constraintVertical_bias="0.0">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -66,6 +76,7 @@
                     android:layout_height="0dp"
                     android:layout_marginTop="@dimen/dp_10"
                     android:scaleType="fitXY"
+                    app:imageCornerUrl="@{detailTeamVM.detailTeam.get(0).strTeamBadge}"
                     app:layout_constraintDimensionRatio="1:1"
                     app:layout_constraintStart_toStartOf="@+id/guideStart"
                     app:layout_constraintTop_toTopOf="parent"
@@ -154,6 +165,7 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/textEstablished"
                     style="@style/TextViewRegular"
+                    android:text="@{detailTeamVM.detailTeam.get(0).intFormedYear}"
                     android:textSize="@dimen/sp_14"
                     app:layout_constraintStart_toStartOf="@+id/viewInfor"
                     app:layout_constraintTop_toTopOf="@+id/viewInfor"
@@ -162,7 +174,10 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/textNicknames"
                     style="@style/TextViewRegular"
+                    android:layout_width="0dp"
+                    android:text="@{detailTeamVM.detailTeam.get(0).strKeywords}"
                     android:textSize="@dimen/sp_14"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/viewInfor"
                     app:layout_constraintTop_toBottomOf="@+id/textEstablished"
                     tools:text="@tools:sample/last_names" />
@@ -170,6 +185,7 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/textSport"
                     style="@style/TextViewRegular"
+                    android:text="@{detailTeamVM.detailTeam.get(0).strSport}"
                     android:textSize="@dimen/sp_14"
                     app:layout_constraintStart_toStartOf="@+id/viewInfor"
                     app:layout_constraintTop_toBottomOf="@+id/textNicknames"
@@ -179,6 +195,7 @@
                     android:id="@+id/textLocation"
                     style="@style/TextViewRegular"
                     android:layout_width="0dp"
+                    android:text="@{detailTeamVM.detailTeam.get(0).strCountry}"
                     android:textSize="@dimen/sp_14"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/viewInfor"
@@ -188,6 +205,7 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/textGender"
                     style="@style/TextViewRegular"
+                    android:text="@{detailTeamVM.detailTeam.get(0).strGender}"
                     android:textSize="@dimen/sp_14"
                     app:layout_constraintStart_toStartOf="@+id/viewInfor"
                     app:layout_constraintTop_toBottomOf="@+id/textLocation"
@@ -259,6 +277,7 @@
                     android:id="@+id/textDescription"
                     style="@style/TextViewRegular"
                     android:layout_marginTop="@dimen/dp_10"
+                    android:text="@{detailTeamVM.detailTeam.get(0).strDescriptionEN}"
                     android:textSize="@dimen/sp_12"
                     app:layout_constraintStart_toStartOf="@+id/guideStart"
                     app:layout_constraintTop_toBottomOf="@+id/titleDescription"
@@ -276,20 +295,34 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/textStadium"
                     style="@style/TextViewBold"
-                    android:layout_marginStart="@dimen/dp_6"
+                    android:layout_width="0dp"
                     android:layout_marginTop="@dimen/dp_10"
+                    android:gravity="end"
+                    android:text="@{detailTeamVM.detailTeam.get(0).strStadium}"
                     android:textSize="@dimen/sp_14"
-                    app:layout_constraintStart_toEndOf="@+id/titleStadium"
-                    app:layout_constraintTop_toBottomOf="@+id/textDescription"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                    app:layout_constraintStart_toStartOf="@+id/guideStart"
+                    app:layout_constraintTop_toBottomOf="@+id/imageStadium"
                     tools:text="@tools:sample/cities" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/textCapacity"
                     style="@style/TextViewBold"
+                    android:layout_width="0dp"
                     android:layout_marginTop="@dimen/dp_10"
+                    android:gravity="start"
+                    android:text="@{@string/text_capacity(detailTeamVM.detailTeam.get(0).intStadiumCapacity)}"
                     android:textSize="@dimen/sp_14"
-                    app:layout_constraintStart_toEndOf="@+id/textStadium"
-                    app:layout_constraintTop_toBottomOf="@+id/textDescription"
+                    app:layout_constraintEnd_toStartOf="@+id/guideEnd"
+                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintTop_toBottomOf="@+id/imageStadium"
                     tools:text="@tools:sample/cities" />
 
                 <androidx.appcompat.widget.AppCompatImageView
@@ -299,10 +332,11 @@
                     android:layout_marginHorizontal="@dimen/dp_6"
                     android:orientation="vertical"
                     android:scaleType="fitXY"
+                    app:imageUrl="@{detailTeamVM.detailTeam.get(0).strStadiumThumb}"
                     app:layout_constraintDimensionRatio="16:9"
                     app:layout_constraintEnd_toStartOf="@+id/guideEnd"
                     app:layout_constraintStart_toStartOf="@+id/guideStart"
-                    app:layout_constraintTop_toBottomOf="@+id/textStadium"
+                    app:layout_constraintTop_toBottomOf="@+id/titleStadium"
                     app:layout_constraintWidth_percent="1"
                     tools:src="@tools:sample/avatars" />
 
@@ -310,9 +344,10 @@
                     android:id="@+id/textDesStadium"
                     style="@style/TextViewRegular"
                     android:layout_marginTop="@dimen/dp_10"
+                    android:text="@{detailTeamVM.detailTeam.get(0).strStadiumDescription}"
                     android:textSize="@dimen/sp_12"
                     app:layout_constraintStart_toStartOf="@+id/guideStart"
-                    app:layout_constraintTop_toBottomOf="@+id/imageStadium"
+                    app:layout_constraintTop_toBottomOf="@+id/textCapacity"
                     tools:text="@tools:sample/cities" />
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -329,6 +364,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
+                    app:data="@{detailTeamVM.events}"
                     app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                     app:layout_constraintEnd_toStartOf="@+id/guideEnd"
                     app:layout_constraintStart_toStartOf="@+id/guideStart"
@@ -352,6 +388,7 @@
                     android:layout_marginTop="@dimen/dp_10"
                     android:layout_marginBottom="@dimen/dp_10"
                     android:scaleType="fitXY"
+                    app:imageCornerUrl="@{detailTeamVM.detailTeam.get(0).strTeamJersey}"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintDimensionRatio="1:1"
                     app:layout_constraintStart_toStartOf="@+id/guideStart"
@@ -372,7 +409,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:visibility="@{detailTeamVM.isLoading()}" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -20,8 +20,7 @@ fun ImageView.loadImage(url: String?) {
 fun ImageView.loadImageCorners(url: String?) {
     Glide.with(context)
         .load(url)
-        .apply(RequestOptions.bitmapTransform(RoundedCorners(
-            resources.getDimensionPixelSize(R.dimen.dp_6))))
+        .apply(RequestOptions.bitmapTransform(RoundedCorners(resources.getDimensionPixelSize(R.dimen.dp_6))))
         .error(R.drawable.ic_error)
         .placeholder(R.drawable.ic_loading)
         .into(this)

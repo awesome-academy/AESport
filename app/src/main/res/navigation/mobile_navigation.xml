@@ -7,7 +7,7 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.suntraining.aesport.ui.home.HomeFragment"
-        android:label="HomeFragment" >
+        android:label="HomeFragment">
         <action
             android:id="@+id/action_homeFragment_to_detailLeagueFragment"
             app:destination="@id/detailLeagueFragment"
@@ -22,7 +22,7 @@
         android:label="DetailLeagueFragment">
         <argument
             android:name="league"
-            app:argType="com.suntraining.aesport.data.model.Leagues"/>
+            app:argType="com.suntraining.aesport.data.model.Leagues" />
         <action
             android:id="@+id/action_detailLeagueFragment_to_detailTeamFragment"
             app:destination="@id/detailTeamFragment"
@@ -34,5 +34,9 @@
     <fragment
         android:id="@+id/detailTeamFragment"
         android:name="com.suntraining.aesport.ui.detailteam.DetailTeamFragment"
-        android:label="DetailTeamFragment" />
+        android:label="DetailTeamFragment">
+        <argument
+            android:name="team"
+            app:argType="com.suntraining.aesport.data.model.Team" />
+    </fragment>
 </navigation>
