@@ -25,6 +25,7 @@
     <string name="text_stadium">Stadium/Home</string>
     <string name="text_jersey">Jersey or Equipment Clearart</string>
     <string name="text_capacity">(%s Capacity)</string>
+    <string name="text_country">Country : </string>
 
     <!--message-->
     <string name="msg_exception_base">Binding is only valid between onCreateView and onDestroyView</string>
