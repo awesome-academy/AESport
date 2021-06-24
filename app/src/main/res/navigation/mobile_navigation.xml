@@ -42,5 +42,23 @@
     <fragment
         android:id="@+id/favoriteFragment"
         android:name="com.suntraining.aesport.ui.favoriteleague.FavoriteLeagueFragment"
-        android:label="FavoriteLeagueFragment" />
+        android:label="FavoriteLeagueFragment">
+        <action
+            android:id="@+id/action_favoriteFragment_to_detailLeagueFragment"
+            app:destination="@id/detailLeagueFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <argument
+            android:name="league"
+            app:argType="com.suntraining.aesport.data.model.Leagues" />
+        <action
+            android:id="@+id/action_detailLeagueFragment_to_detailTeamFragment"
+            app:destination="@id/detailTeamFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
 </navigation>

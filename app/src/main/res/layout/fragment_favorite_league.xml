@@ -3,6 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="favoriteVM"
+            type="com.suntraining.aesport.ui.favoriteleague.FavoriteLeagueViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -31,9 +38,10 @@
             app:layout_constraintTop_toTopOf="@+id/viewToolbar" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerSports"
+            android:id="@+id/recyclerFavorites"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            app:data="@{favoriteVM.leagueSaved}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -49,7 +57,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:visibility="@{favoriteVM.isLoading()}" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
