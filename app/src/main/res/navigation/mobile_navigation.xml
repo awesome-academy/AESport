@@ -61,4 +61,12 @@
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.suntraining.aesport.ui.search.SearchFragment"
+        android:label="SearchFragment" >
+        <action
+            android:id="@+id/action_searchFragment_to_detailTeamFragment"
+            app:destination="@id/detailTeamFragment" />
+    </fragment>
 </navigation>

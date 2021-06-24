@@ -8,6 +8,8 @@
     <string name="title_sports">Sports</string>
     <string name="title_leagues">Leagues</string>
     <string name="title_countries">Countries</string>
+    <string name="title_player">Player</string>
+    <string name="title_team">Team</string>
 
     <!--text-->
     <string name="text_welcome">Welcome to AESport Application</string>
