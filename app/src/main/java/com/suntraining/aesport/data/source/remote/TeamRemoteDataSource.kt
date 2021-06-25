@@ -14,4 +14,7 @@ class TeamRemoteDataSource(
 
     override suspend fun getEventsByTeam(idTeam: String) =
         apiService.getEventsByTeam(idTeam)
+
+    override suspend fun getTeamsByKeyword(key: String) =
+        apiService.getTeamsByKeyword(key)
 }

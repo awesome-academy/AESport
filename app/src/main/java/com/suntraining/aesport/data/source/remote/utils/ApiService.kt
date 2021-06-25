@@ -77,4 +77,22 @@ interface ApiService {
     suspend fun getEventsByTeam(
         @Query(APIConfig.PARAM_ID) idTeam: String,
     ): EventsTeamResponse
+
+    /**
+     * Search for players by name
+     * <a href="https://www.thesportsdb.com/api/v1/json/1/searchplayers.php?p=Danny%20Welbeck">https://www.thesportsdb.com/api/v1/json/1/searchplayers.php?p=Danny%20Welbeck</a>
+     */
+    @GET(APIConfig.BASE_SEARCH_PLAYER)
+    suspend fun getPlayersByKeyword(
+        @Query(APIConfig.PARAM_PLAYER) keyWord: String,
+    ): PlayerResponse
+
+    /**
+     * Search for team by name
+     * <a href="https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Arsenal">https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Arsenal</a>
+     */
+    @GET(APIConfig.BASE_SEARCH_TEAM)
+    suspend fun getTeamsByKeyword(
+        @Query(APIConfig.PARAM_TEAM) keyWord: String,
+    ): TeamResponse
 }
