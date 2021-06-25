@@ -1,5 +1,8 @@
 package com.suntraining.aesport.ui.main
 
+import android.content.Context
+import android.view.MotionEvent
+import android.view.inputmethod.InputMethodManager
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.suntraining.aesport.R
@@ -18,5 +21,13 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             selectedItemId = R.id.homeFragment
             setupWithNavController(navController)
         }
+    }
+
+    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
+        currentFocus?.let {
+            val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(it.windowToken, 0)
+        }
+        return super.dispatchTouchEvent(ev)
     }
 }
