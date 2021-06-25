@@ -13,4 +13,7 @@ class TeamRepositoryImpl(
 
     override suspend fun getEventsByTeam(idTeam: String) =
         remote.getEventsByTeam(idTeam)
+
+    override suspend fun getTeamsByKeyword(key: String) =
+        remote.getTeamsByKeyword(key)
 }
