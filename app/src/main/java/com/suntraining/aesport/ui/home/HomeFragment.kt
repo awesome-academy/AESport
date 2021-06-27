@@ -55,6 +55,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
     }
 
     private fun clickItemSport(sports: Sports) {
+        val action = HomeFragmentDirections.actionHomeFragmentToLeaguesBySportFragment(sports)
+        findNavController().navigate(action)
     }
 
     private fun clickItemLeague(leagues: Leagues) {
