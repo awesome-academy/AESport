@@ -9,6 +9,7 @@ interface LeagueRepository {
     suspend fun getLeaguesByCountry(country: String): LeaguesResponse
     suspend fun getDetailLeague(idLeague: String): DetailLeagueResponse
     suspend fun getEventsByLeague(idLeague: String): EventResponse
+    suspend fun getLeaguesBySport(sport: String): LeaguesResponse
     suspend fun getSavedLeagues(): List<Leagues>
     suspend fun insertLeague(leagues: Leagues)
     suspend fun deleteGame(leagues: Leagues)

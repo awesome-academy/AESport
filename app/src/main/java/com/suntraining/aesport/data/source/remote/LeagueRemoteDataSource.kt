@@ -4,7 +4,7 @@ import com.suntraining.aesport.data.source.LeagueDataSource
 import com.suntraining.aesport.data.source.remote.utils.ApiService
 
 class LeagueRemoteDataSource(
-    private val apiService: ApiService
+    private val apiService: ApiService,
 ) : LeagueDataSource.Remote {
     override suspend fun getLeaguesByCountry(country: String) =
         apiService.getLeaguesByCountry(country)
@@ -14,4 +14,7 @@ class LeagueRemoteDataSource(
 
     override suspend fun getEventsByLeague(idLeague: String) =
         apiService.getEventsInLeague(idLeague)
+
+    override suspend fun getLeaguesBySport(sport: String) =
+        apiService.getLeaguesBySport(sport)
 }

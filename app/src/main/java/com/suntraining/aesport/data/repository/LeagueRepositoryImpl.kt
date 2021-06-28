@@ -16,6 +16,9 @@ class LeagueRepositoryImpl(
     override suspend fun getEventsByLeague(idLeague: String) =
         remote.getEventsByLeague(idLeague)
 
+    override suspend fun getLeaguesBySport(sport: String) =
+        remote.getLeaguesBySport(sport)
+
     override suspend fun getSavedLeagues() =
         local.getSavedLeagues()
 

@@ -31,7 +31,7 @@ fun ImageView.loadImageLocal(complete: String?) {
     val src = when (complete) {
         resources.getString(R.string.value_yes) -> R.drawable.ic_complete
         resources.getString(R.string.values_no) -> R.drawable.ic_uncomplete
-        else -> R.drawable.ic_error
+        else -> R.drawable.ic_question
     }
     Glide.with(context).load(src).into(this)
 }
