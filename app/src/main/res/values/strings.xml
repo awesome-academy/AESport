@@ -10,6 +10,7 @@
     <string name="title_countries">Countries</string>
     <string name="title_player">Player</string>
     <string name="title_team">Team</string>
+    <string name="title_former_team">Former Teams</string>
 
     <!--text-->
     <string name="text_welcome">Welcome to AESport Application</string>
@@ -28,6 +29,10 @@
     <string name="text_jersey">Jersey or Equipment Clearart</string>
     <string name="text_capacity">(%s Capacity)</string>
     <string name="text_country">Country : </string>
+    <string name="text_born">Date born</string>
+    <string name="text_birth_place">Birthplace</string>
+    <string name="text_height">Height</string>
+    <string name="text_weight">Weight</string>
 
     <!--message-->
     <string name="msg_exception_base">Binding is only valid between onCreateView and onDestroyView</string>
