@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+
+        <View
+            android:id="@+id/viewToolbar"
+            android:layout_width="0dp"
+            android:layout_height="?actionBarSize"
+            android:background="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/buttonBack"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/dp_6"
+            android:background="?android:selectableItemBackground"
+            android:contentDescription="@null"
+            app:layout_constraintBottom_toBottomOf="@id/viewToolbar"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="@id/viewToolbar"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.07"
+            app:srcCompat="@drawable/ic_arrow_back" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textTitle"
+            style="@style/TextTitleToolbar"
+            android:layout_width="0dp"
+            android:layout_marginStart="@dimen/dp_10"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textSize="@dimen/sp_24"
+            app:layout_constraintBottom_toBottomOf="@id/viewToolbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/buttonBack"
+            app:layout_constraintTop_toTopOf="@id/viewToolbar"
+            tools:text="@tools:sample/last_names" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewToolbar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="@dimen/dp_20">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imagePlayer"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:scaleType="fitXY"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintStart_toStartOf="@id/guideStart"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="0.3"
+                    tools:src="@tools:sample/avatars" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideStart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="@dimen/dp_10" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideEnd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="@dimen/dp_10" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideTop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="0dp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.35" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/titleBorn"
+                    style="@style/TextViewBold"
+                    android:text="@string/text_born"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintStart_toStartOf="@id/guideline5"
+                    app:layout_constraintTop_toTopOf="@id/guideTop" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/titleBirthplace"
+                    style="@style/TextViewBold"
+                    android:text="@string/text_birth_place"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintStart_toStartOf="@id/guideline5"
+                    app:layout_constraintTop_toBottomOf="@id/titleBorn" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/titleSport"
+                    style="@style/TextViewBold"
+                    android:text="@string/text_sport"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintStart_toStartOf="@id/guideline5"
+                    app:layout_constraintTop_toBottomOf="@id/titleBirthplace" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/titleGender"
+                    style="@style/TextViewBold"
+                    android:text="@string/text_gender"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintStart_toStartOf="@id/guideline5"
+                    app:layout_constraintTop_toBottomOf="@id/titleSport" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/titleHeight"
+                    style="@style/TextViewBold"
+                    android:text="@string/text_height"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintStart_toStartOf="@id/guideline5"
+                    app:layout_constraintTop_toBottomOf="@id/titleGender" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/titleWeight"
+                    style="@style/TextViewBold"
+                    android:text="@string/text_weight"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintStart_toStartOf="@id/guideline5"
+                    app:layout_constraintTop_toBottomOf="@id/titleHeight" />
+
+                <View
+                    android:id="@+id/viewInfor"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="@dimen/dp_14"
+                    app:layout_constraintBottom_toBottomOf="@id/titleGender"
+                    app:layout_constraintEnd_toStartOf="@id/guideEnd"
+                    app:layout_constraintStart_toEndOf="@id/titleBorn"
+                    app:layout_constraintTop_toTopOf="@id/guideTop" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textBorn"
+                    style="@style/TextViewRegular"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintStart_toStartOf="@id/viewInfor"
+                    app:layout_constraintTop_toTopOf="@id/viewInfor"
+                    tools:text="@tools:sample/last_names" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textBirthplace"
+                    style="@style/TextViewRegular"
+                    android:layout_width="0dp"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/viewInfor"
+                    app:layout_constraintTop_toBottomOf="@id/textBorn"
+                    tools:text="@tools:sample/last_names" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textSport"
+                    style="@style/TextViewRegular"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintStart_toStartOf="@id/viewInfor"
+                    app:layout_constraintTop_toBottomOf="@id/textBirthplace"
+                    tools:text="@tools:sample/last_names" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textGender"
+                    style="@style/TextViewRegular"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintStart_toStartOf="@id/viewInfor"
+                    app:layout_constraintTop_toBottomOf="@id/textSport"
+                    tools:text="@tools:sample/last_names" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textHeight"
+                    style="@style/TextViewRegular"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintStart_toStartOf="@id/viewInfor"
+                    app:layout_constraintTop_toBottomOf="@+id/textGender"
+                    tools:text="@tools:sample/last_names" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textWeight"
+                    style="@style/TextViewRegular"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintStart_toStartOf="@id/viewInfor"
+                    app:layout_constraintTop_toBottomOf="@+id/textHeight"
+                    tools:text="@tools:sample/last_names" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageFacebook"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/dp_8"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintEnd_toStartOf="@id/imageInstagram"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@id/guideStart"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/imagePlayer"
+                    app:layout_constraintWidth_percent="0.06"
+                    app:srcCompat="@drawable/ic_facebook" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageInstagram"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/dp_8"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintEnd_toStartOf="@id/imageTwitter"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@id/imageFacebook"
+                    app:layout_constraintTop_toBottomOf="@id/imagePlayer"
+                    app:layout_constraintWidth_percent="0.06"
+                    app:srcCompat="@drawable/ic_instagram" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageTwitter"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/dp_8"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintEnd_toStartOf="@id/guideline5"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@id/imageInstagram"
+                    app:layout_constraintTop_toBottomOf="@id/imagePlayer"
+                    app:layout_constraintWidth_percent="0.06"
+                    app:srcCompat="@drawable/ic_twitter" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/titleDescription"
+                    style="@style/TextViewBold"
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:text="@string/text_descriptions"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintStart_toStartOf="@id/guideStart"
+                    app:layout_constraintTop_toBottomOf="@id/imageFacebook" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textDescription"
+                    style="@style/TextViewRegular"
+                    android:layout_width="0dp"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:textSize="@dimen/sp_12"
+                    app:layout_constraintEnd_toStartOf="@+id/guideEnd"
+                    app:layout_constraintStart_toStartOf="@id/guideStart"
+                    app:layout_constraintTop_toBottomOf="@id/titleDescription"
+                    tools:text="@tools:sample/cities" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/titleFormerTeams"
+                    style="@style/TextViewBold"
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:text="@string/title_former_team"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintStart_toStartOf="@id/guideStart"
+                    app:layout_constraintTop_toBottomOf="@id/textDescription" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerEvents"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:layout_constraintEnd_toStartOf="@+id/guideEnd"
+                    app:layout_constraintStart_toStartOf="@+id/guideStart"
+                    app:layout_constraintTop_toBottomOf="@+id/titleFormerTeams"
+                    app:spanCount="2"
+                    tools:listitem="@layout/item_event" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/processLoading"
+            style="@style/SpinKitView.Large.Wave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:SpinKit_Color="@color/color_cornflower_blue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

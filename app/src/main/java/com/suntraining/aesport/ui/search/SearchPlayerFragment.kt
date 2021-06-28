@@ -1,5 +1,6 @@
 package com.suntraining.aesport.ui.search
 
+import androidx.navigation.fragment.findNavController
 import com.suntraining.aesport.R
 import com.suntraining.aesport.base.BaseFragment
 import com.suntraining.aesport.data.model.Player
@@ -32,5 +33,7 @@ class SearchPlayerFragment : BaseFragment<FragmentSearchPlayerBinding, SearchVie
     }
 
     private fun clickItemPlayer(player: Player) {
+        val action = SearchFragmentDirections.actionSearchFragmentToDetailPlayerFragment(player)
+        findNavController().navigate(action)
     }
 }

@@ -68,5 +68,16 @@
         <action
             android:id="@+id/action_searchFragment_to_detailTeamFragment"
             app:destination="@id/detailTeamFragment" />
+        <action
+            android:id="@+id/action_searchFragment_to_detailPlayerFragment"
+            app:destination="@id/detailPlayerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailPlayerFragment"
+        android:name="com.suntraining.aesport.ui.detailplayer.DetailPlayerFragment"
+        android:label="DetailPlayerFragment" >
+        <argument
+            android:name="player"
+            app:argType="com.suntraining.aesport.data.model.Player" />
     </fragment>
 </navigation>
