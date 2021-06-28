@@ -15,5 +15,5 @@ val viewModelModule = module {
     viewModel { DetailTeamViewModel(get()) }
     viewModel { FavoriteLeagueViewModel(get()) }
     viewModel { SearchViewModel(get(), get()) }
-    viewModel { LeaguesBySportViewModel() }
+    viewModel { LeaguesBySportViewModel(get()) }
 }
